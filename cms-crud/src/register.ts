@@ -8,3 +8,6 @@ registCoxApp(store)
 registCoxComponents({ 
     Header: () => import('@/components/Header.vue')
 })
+
+// @ts-ignore
+window.$store = store

@@ -1,8 +1,27 @@
 import { FaasConfRaw, FaasParams } from "icox";
+import { showFormDialog } from "@icox/cms";
 
 const BOOLEAN_MAP = {
     0: '否',
     1: '是',
+}
+
+const actions = {
+    toDetail: async (ctx: FaasParams) => {
+
+    },
+    toBatch: async  (ctx: FaasParams) => {
+        
+    },
+    toEdit: async (ctx: FaasParams) => {
+        const op = await showFormDialog(ctx)({
+            form: ['title']
+        })
+        if (op.type === 'submit') {
+            console.log(op.data)
+            // do api
+        }
+     }
 }
 
 export const page_raw: FaasConfRaw = {
@@ -46,19 +65,20 @@ export const page_raw: FaasConfRaw = {
         name: "type",
         label: ({ filter }) => `类型: ${filter.type}`,
         attrs: { width: '120px' },
-    }]
-}
-
-export function _sleep(t = 300) {
-    return new Promise(res => {
-        setTimeout(() => {
-            res(null)
-        }, t);
-    })
+    }],
+    operation: [{
+        name: '@edit',
+        text: '编辑',
+        action: actions.toEdit,
+    }],
+    form: [{
+        name: "title",
+        label: "标题",
+        rules: { required: true, message: '请输入标题' },
+    }],
 }
 
 async function getTypeOptions(faas: FaasParams) {
-    await _sleep()
     return [
         { label: 'type1', val: 1 }, 
         { label: 'type2', val: 2 }, 
