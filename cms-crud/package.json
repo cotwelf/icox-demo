@@ -1,0 +1,37 @@
+{
+  "name": "material-fe-v3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "npm run serve",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "icox": "^0.1.0",
+    "@icox/cms": "^0.0.1",
+    "@types/axios": "^0.14.0",
+    "@types/js-cookie": "^3.0.1",
+    "@types/lodash": "^4.14.172",
+    "axios": "^0.21.4",
+    "element-plus": "^1.1.0-beta.24",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
+    "qs": "^6.10.1",
+    "tslib": "^2.3.1",
+    "vue": "^3.2.23",
+    "vue-router": "^4.0.11",
+    "vue3-aplayer": "^1.7.3",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "^4.5.13",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-vuex": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
+    "@vue/compiler-sfc": "^3.2.2",
+    "sass": "^1.51.0",
+    "sass-loader": "^8.0.2",
+    "typescript": "~4.1.5"
+  }
+}
